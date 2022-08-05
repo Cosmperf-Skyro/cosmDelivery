@@ -14,7 +14,7 @@ function TOOL:LeftClick()
     net.SendToServer()
 
 
-    net.Receive("cosmDelivery:AfterCheck", function ()
+    net.Receive("cosmShop:AfterCheck", function ()
         if not IsValid(cosmShop.Tool.frame) then
             cosmShop.Tool.frame = vgui.Create("TLFrame")
             cosmShop.Tool.frame:SetSize(respW(700), respH(500))
@@ -26,8 +26,35 @@ function TOOL:LeftClick()
 
             cosmShop.Tool.Name = vgui.Create("TLTextEntry", cosmShop.Tool.frame)
             cosmShop.Tool.Name:SetSize(respW(280), respH(40))
-            cosmShop.Tool.Name:SetPos(respW(10), respH(100))
-            cosmShop.Tool.Name:SetPlaceholderText("Choisir le nom de l'objet")
+            cosmShop.Tool.Name:SetPos(respW(30), respH(100))
+            cosmShop.Tool.Name:SetPlaceholderText("Saisir le nom de l'objet")
+
+            cosmShop.Tool.Models = vgui.Create("TLTextEntry", cosmShop.Tool.frame)
+            cosmShop.Tool.Models:SetSize(respW(280), respH(40))
+            cosmShop.Tool.Models:SetPos(respW(390), respH(100))
+            cosmShop.Tool.Models:SetPlaceholderText("Saisir le modèle de l'objet")
+
+            cosmShop.Tool.Price = vgui.Create("TLTextEntry", cosmShop.Tool.frame)
+            cosmShop.Tool.Price:SetSize(respW(280), respH(40))
+            cosmShop.Tool.Price:SetPos(respW(30), respH(200))
+            cosmShop.Tool.Price:SetPlaceholderText("Saisir le prix de l'objet")
+
+            cosmShop.Tool.Class = vgui.Create("TLTextEntry", cosmShop.Tool.frame)
+            cosmShop.Tool.Class:SetSize(respW(280), respH(40))
+            cosmShop.Tool.Class:SetPos(respW(390), respH(200))
+            cosmShop.Tool.Class:SetPlaceholderText("Saisir la classe de l'objet")
+
+
+            cosmShop.Tool.View = vgui.Create("TLButton", cosmShop.Tool.frame)
+            cosmShop.Tool.View:SetSize(respW(300), respH(60))
+            cosmShop.Tool.View:SetPos(respW(30), respH(365))
+            cosmShop.Tool.View:SetText("Voir les objets")
+
+
+            cosmShop.Tool.Submit = vgui.Create("TLButton", cosmShop.Tool.frame)
+            cosmShop.Tool.Submit:SetSize(respW(300), respH(60))
+            cosmShop.Tool.Submit:SetPos(respW(370), respH(365))
+            cosmShop.Tool.Submit:SetText("Créer")
 
         end
     end)
