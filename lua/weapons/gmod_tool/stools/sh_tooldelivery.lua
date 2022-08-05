@@ -14,19 +14,17 @@ function TOOL:LeftClick()
     net.SendToServer()
 
 
-    net.Receive("cosmDelivery:AfterCheck", function (len, ply)
-        if not IsValid(cosmDelivery.Tool.frame) then
-            cosmDelivery.Tool.frame = vgui.Create("TLFrame")
-                cosmDelivery.Tool.frame:SetSize(respW(600), respH(450))
-                cosmDelivery.Tool.frame:Center()
-                cosmDelivery.Tool.frame:MakePopup()
-                cosmDelivery.Tool.frame:ShowCloseButton(true)
-                cosmDelivery.Tool.frame:SetDraggable(false)
-                cosmDelivery.Tool.frame:SetHeader("COSMDELIVERY | CONFIGURATION")
-        end
+    net.Receive("cosmDelivery:AfterCheck", function ()
+        //if not IsValid(cosmDelivery.Tool.frame) then
+            local frame = vgui.Create("DFrame")
+            frame:SetSize(1000, 500)
+            frame:Center()
+       // end
     end)
 
 end
+
+
 
 
 
