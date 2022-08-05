@@ -1,6 +1,6 @@
-cosmDelivery = cosmDelivery or {}
-cosmDelivery.Tool = cosmDelivery.Tool or {}
+cosmShop = cosmShop or {}
+cosmShop.Tool = cosmShop.Tool or {}
 
-cosmDelivery.UserGroup = {
+cosmShop.UserGroup = {
     ["superadmin"] = true,
 }
